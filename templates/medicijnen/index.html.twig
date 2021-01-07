@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} HealthOne - Medicijnen index{% endblock %}
+
+{% block body %}
+
+    <style>
+
+        .table {
+            margin-top: 5vh;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+
+        thead {
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naam</th>
+                <th>Werking</th>
+                <th>Bijwerking</th>
+                <th>Verzekerd</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medicijnen in medicijnens %}
+            <tr>
+                <td>{{ medicijnen.id }}</td>
+                <td>{{ medicijnen.naam }}</td>
+                <td>{{ medicijnen.werking }}</td>
+                <td>{{ medicijnen.bijwerking }}</td>
+                <td>{{ medicijnen.verzekerd }}</td>
+                <td>
+                    <a href="{{ path('medicijnen_show', {'id': medicijnen.id}) }}">show</a>
+                    <a href="{{ path('medicijnen_edit', {'id': medicijnen.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{#    <a href="{{ path('medicijnen_new') }}">Create new</a>#}
+{% endblock %}

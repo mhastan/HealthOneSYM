@@ -1,0 +1,19 @@
+<style>
+    body {
+    color: black;
+    }
+
+    form {
+        margin-top: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+</style>
+
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-dark float-right">{{ button_label|default('Opslaan') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} HealthOne - Edit Medicijnen{% endblock %}
+
+{% block body %}
+
+
+    {{ include('medicijnen/_form.html.twig', {'button_label': 'Update'}) }}
+
+{#    <a href="{{ path('medicijnen_index') }}">back to list</a>#}
+
+    {{ include('medicijnen/_delete_form.html.twig') }}
+{% endblock %}

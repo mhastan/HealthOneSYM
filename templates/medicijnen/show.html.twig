@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} HealthOne -  Medicijnen{% endblock %}
+
+{% block body %}
+
+
+
+    <style>
+
+        .table {
+            margin-top: 5vh;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+    </style>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ medicijnen.id }}</td>
+            </tr>
+            <tr>
+                <th>Naam</th>
+                <td>{{ medicijnen.naam }}</td>
+            </tr>
+            <tr>
+                <th>Werking</th>
+                <td>{{ medicijnen.werking }}</td>
+            </tr>
+            <tr>
+                <th>Bijwerking</th>
+                <td>{{ medicijnen.bijwerking }}</td>
+            </tr>
+            <tr>
+                <th>Verzekerd</th>
+                <td>{{ medicijnen.verzekerd }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('medicijnen_index') }}">back to list</a>
+
+    <a href="{{ path('medicijnen_edit', {'id': medicijnen.id}) }}">edit</a>
+
+    {{ include('medicijnen/_delete_form.html.twig') }}
+{% endblock %}
